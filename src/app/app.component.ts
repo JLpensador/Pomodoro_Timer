@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
   standalone: true,
   imports: [TimerComponent, HeaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'pomodoro';

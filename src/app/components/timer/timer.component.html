@@ -1,1 +1,25 @@
-<p>timer works!</p>
+<div class="pomodoro-timer">
+  <h2>{{ isWorking ? "work-Time" : "break-Time" }}</h2>
+  <h1>{{ formattedTime }}</h1>
+
+  <div class="controls">
+    <button (click)="startTimer()" [disabled]="isRunning">Start</button>
+    <button (click)="stopTimer()" [disabled]="!isRunning">Stop</button>
+    <button (click)="resetTimer()">Reset</button>
+    <button (click)="switchMode()">Break</button>
+  </div>
+
+  <div class="adjust-timer">
+    <h3>Adjust Time</h3>
+    <div>
+      <h4>Work Time: {{ workTime / 60 }} Min</h4>
+      <button (click)="increaseWorkTime()">+</button>
+      <button (click)="decreaseWorkTime()">-</button>
+    </div>
+    <div>
+      <h4>Break Time {{ breakTime / 60 }} Min</h4>
+      <button (click)="increaseBreakTime()"></button>
+      <button (click)="decreaseBreakTime()"></button>
+    </div>
+  </div>
+</div>
