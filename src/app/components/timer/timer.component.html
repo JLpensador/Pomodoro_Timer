@@ -1,27 +1,44 @@
 <div class="background">
   <div class="pomodoro-timer">
-    <h2>{{ isWorking ? "work-Time" : "break-Time" }}</h2>
-    <h1>{{ formattedTime }}</h1>
+    <fieldset>
+      <legend>
+        <h2>{{ isWorking ? "work-Time" : "break-Time" }}</h2>
+      </legend>
+      <h1>{{ formattedTime }}</h1>
 
-    <div class="controls">
-      <button (click)="startTimer()" [disabled]="isRunning">Start</button>
-      <button (click)="stopTimer()" [disabled]="!isRunning">Stop</button>
-      <button (click)="resetTimer()">Reset</button>
-      <button (click)="switchMode()">Break</button>
-    </div>
-
-    <div class="adjust-timer">
-      <h3>Adjust Time</h3>
-      <div>
-        <h4>Work Time: {{ workTime / 60 }} Min</h4>
-        <button (click)="increaseWorkTime()">+1</button>
-        <button (click)="decreaseWorkTime()">-1</button>
+      <div class="controls">
+        <button
+          (click)="startTimer()"
+          [disabled]="isRunning"
+          class="btn btn-dark"
+        >
+          Start
+        </button>
+        <button
+          (click)="stopTimer()"
+          [disabled]="!isRunning"
+          class="btn btn-dark"
+        >
+          Stop
+        </button>
+        <button (click)="resetTimer()" class="btn btn-dark">Reset</button>
+        <button (click)="switchMode()" class="btn btn-dark">Break</button>
       </div>
-      <div>
-        <h4>Break Time {{ breakTime / 60 }} Min</h4>
-        <button (click)="increaseBreakTime()">+1</button>
-        <button (click)="decreaseBreakTime()">-1</button>
+      <br />
+      <div class="adjust-timer">
+        <h3>Adjust Time</h3>
+        <div>
+          <h4>Work Time: {{ workTime / 60 }} Min</h4>
+          <button (click)="increaseWorkTime()" class="btn btn-dark">+1</button>
+          <button (click)="decreaseWorkTime()" class="btn btn-dark">-1</button>
+        </div>
+        <br />
+        <div>
+          <h4>Break Time {{ breakTime / 60 }} Min</h4>
+          <button (click)="increaseBreakTime()" class="btn btn-dark">+1</button>
+          <button (click)="decreaseBreakTime()" class="btn btn-dark">-1</button>
+        </div>
       </div>
-    </div>
+    </fieldset>
   </div>
 </div>
