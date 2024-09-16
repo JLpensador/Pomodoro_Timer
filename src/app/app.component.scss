@@ -10,6 +10,24 @@
   font-style: normal;
 }
 
+.botão:checked ~ .dark-mode:after {
+  left: 90px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #002b36);
+}
+
+.botão:checked ~ .dark-mode {
+  background: #000;
+}
+
+.botão {
+  display: none;
+}
+
+input:checked + label + .background {
+  background-image: linear-gradient(to bottom left, #480048, #002b36);
+}
+
 .background {
   position: absolute;
   bottom: 0%;
@@ -21,4 +39,36 @@
   transition: 0.5s;
   margin-right: -42px;
   margin-top: -40px;
+}
+
+input:checked + .inputUser:focus ~ .labelInput,
+.inputUser:valid ~ .labelInput {
+  color: #840606;
+}
+
+.dark-mode {
+  position: relative;
+  width: 99px;
+  height: 41px;
+  display: block;
+  background: #d9d9d9;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.3),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.3);
+  left: 1%;
+  top: 15px;
+}
+
+.dark-mode:after {
+  content: "";
+  position: absolute;
+  height: 57%;
+  width: 27%;
+  background: #f2f2f2;
+  border-radius: 100px;
+  top: 10px;
+  left: 10px;
+  transition: 0.5s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
